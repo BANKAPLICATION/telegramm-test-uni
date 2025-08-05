@@ -17,7 +17,7 @@ def start(update, context):
     update.message.reply_text(
         "Здравствуйте! Я помогу вам с поступлением.\nВыберите интересующий вас вопрос:",
         reply_markup=markup
-    )
+)
 
 def handle_message(update, context):
     user_text = update.message.text

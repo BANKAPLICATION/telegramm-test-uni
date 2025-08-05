@@ -1,0 +1,16 @@
+import json
+
+with open("faq.json", "r", encoding="utf-8") as f:
+    FAQ = json.load(f)
+
+FAQ_KEYS = list(FAQ.keys())
+
+def get_answer(user_text: str) -> str:
+    text = user_text.lower()
+    for key in FAQ:
+        if key in text:
+            return FAQ[key]
+    return "Ваш вопрос передан сотруднику. Пожалуйста, ожидайте ответа."
+
+def get_faq_answer_by_key(key: str) -> str:
+    return FAQ.get(key, "Ответ не найден.")
